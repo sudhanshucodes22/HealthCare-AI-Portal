@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Clock, MapPin, User, ChevronRight, CheckCircle2, XCircle, Printer, AlertTriangle, Loader2, Plus } from 'lucide-react';
+import { Calendar, Clock, User, ChevronRight, CheckCircle2, XCircle, Printer, AlertTriangle, Loader2, Plus } from 'lucide-react';
 import api from '../services/api';
-import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
 
 interface Appointment {

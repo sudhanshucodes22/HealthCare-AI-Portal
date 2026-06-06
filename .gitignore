@@ -28,6 +28,26 @@ dist-ssr
 .env.production
 .env.development
 .env.local
+server/.env
+server/.env.local
+server/.env.production
+
+# Database files (never commit these)
+*.sqlite
+*.sqlite-journal
+server/database.sqlite
+
+# Server node_modules
+server/node_modules/
+
+# Upload folder
+server/uploads/
+
+# Test scripts (local only)
+server/test_*.js
+server/inspect_*.js
+server/scan_*.js
+server/list_*.js
 
 # Build outputs
 dist/

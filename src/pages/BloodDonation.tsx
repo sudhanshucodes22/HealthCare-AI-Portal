@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Search, UserPlus, Phone, MapPin, Droplet, AlertCircle, Loader2 } from 'lucide-react';
+import { Heart, Search, UserPlus, Phone, MapPin, Droplet, AlertCircle, Loader2, Activity, Syringe } from 'lucide-react';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
@@ -84,6 +84,26 @@ export default function BloodDonation() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 relative overflow-hidden pt-20 pb-12 px-4">
       <div className="absolute top-0 right-1/3 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-blob"></div>
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }}></div>
+
+      {/* Subtle Background Decorations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+        <div className="absolute top-[25%] left-[5%] opacity-[0.16] text-red-500">
+          <Droplet className="w-24 h-24 filter blur-[0.5px] fill-red-500/20" />
+        </div>
+        <div className="absolute bottom-[20%] right-[6%] opacity-[0.15] text-rose-500">
+          <Heart className="w-36 h-36 filter blur-[0.5px] fill-rose-500/10" />
+        </div>
+        <div className="absolute top-[60%] left-[8%] opacity-[0.13] text-red-400">
+          <Syringe className="w-20 h-20 rotate-45" />
+        </div>
+        <div className="absolute top-[18%] right-[10%] opacity-[0.14] text-pink-400">
+          <Activity className="w-24 h-24" />
+        </div>
+        <div className="absolute bottom-[40%] left-[4%] opacity-[0.11] text-rose-400">
+          <Droplet className="w-16 h-16 fill-rose-400/20" />
+        </div>
+      </div>
+
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-red-500 to-rose-600 rounded-full mb-4 animate-float animate-pulse-glow">

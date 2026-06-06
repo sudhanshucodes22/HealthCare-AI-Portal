@@ -71,7 +71,7 @@ export default function EmergencyLocator() {
       const response = await api.post('/emergency/nearby', {
         latitude: lat,
         longitude: lng,
-        radius: 5000
+        radius: 15000
       });
       // Try to gracefully handle map differences from mock and regular DB
       setProviders(response.data);
@@ -198,6 +198,26 @@ export default function EmergencyLocator() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 relative overflow-hidden pt-20 pb-12 px-4">
       <div className="absolute top-0 right-1/3 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-blob"></div>
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }}></div>
+
+      {/* Subtle Background Decorations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+        <div className="absolute top-[25%] left-[5%] opacity-[0.14] text-orange-400">
+          <MapPin className="w-24 h-24 filter blur-[0.5px]" />
+        </div>
+        <div className="absolute bottom-[22%] right-[5%] opacity-[0.15] text-amber-400">
+          <Building2 className="w-32 h-32 filter blur-[0.5px]" />
+        </div>
+        <div className="absolute top-[58%] left-[7%] opacity-[0.13] text-orange-300">
+          <Ambulance className="w-20 h-20 -rotate-12" />
+        </div>
+        <div className="absolute top-[18%] right-[10%] opacity-[0.14] text-yellow-400">
+          <Navigation className="w-24 h-24 rotate-45" />
+        </div>
+        <div className="absolute bottom-[40%] left-[3%] opacity-[0.11] text-orange-500">
+          <MapPin className="w-16 h-16" />
+        </div>
+      </div>
+
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full mb-4 animate-float animate-pulse-glow">

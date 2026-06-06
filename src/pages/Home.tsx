@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Brain, Heart, Bell, MapPin, MessageCircle, ArrowRight, Sparkles, Zap, Shield } from 'lucide-react';
+import { Brain, Heart, Bell, MapPin, MessageCircle, ArrowRight, Sparkles, Zap, Shield, Calendar, HeartPulse } from 'lucide-react';
 import AnimatedButton from '../components/AnimatedButton';
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
     {
       icon: MessageCircle,
       title: 'Mental Health Support',
-      description: 'Chat with our AI companion for emotional support and positive guidance.',
+      description: 'Chat with our AI companion for emotional support and play interactive mood-boosting games.',
       path: '/mental-health',
       gradient: 'from-green-500 to-emerald-600',
     },
@@ -45,6 +45,20 @@ export default function Home() {
       description: 'Compare health insurance plans and find the best coverage for you and your family.',
       path: '/health-insurance',
       gradient: 'from-indigo-500 to-violet-600',
+    },
+    {
+      icon: HeartPulse,
+      title: 'Organ Donation Platform',
+      description: 'Give the gift of life limitlessly. Pledge to donate or find an organ match.',
+      path: '/organ-donation',
+      gradient: 'from-purple-500 to-fuchsia-600',
+    },
+    {
+      icon: Calendar,
+      title: 'Online Appointments',
+      description: 'Book video consultations or in-person visits with top healthcare professionals globally.',
+      path: '/online-appointments',
+      gradient: 'from-sky-500 to-blue-600',
     },
   ];
 
@@ -160,14 +174,7 @@ export default function Home() {
             </div>
           </div>
 
-          <footer className="mt-16 pt-8 border-t border-gray-700 text-center text-gray-400">
-            <p className="mb-2 font-semibold">© 2024 HealthCare AI. All rights reserved.</p>
-            <p className="text-sm max-w-2xl mx-auto opacity-75">
-              <strong>Disclaimer:</strong> This platform provides informational content only and is not a substitute
-              for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician
-              or other qualified health provider with any questions you may have regarding a medical condition.
-            </p>
-          </footer>
+
         </div>
       </div>
     </div>

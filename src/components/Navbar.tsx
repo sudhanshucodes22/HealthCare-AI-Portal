@@ -21,6 +21,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Disease Predictor', path: '/disease-predictor' },
     { name: 'Blood Donation', path: '/blood-donation' },
+    { name: 'Organ Donation', path: '/organ-donation' },
     { name: 'Mental Health', path: '/mental-health' },
     { name: 'Medicine Reminder', path: '/medicine-reminder' },
     { name: 'Emergency Locator', path: '/emergency-locator' },

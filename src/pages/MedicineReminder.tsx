@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Pill, Clock, Calendar, Trash2, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Plus, Pill, Clock, Calendar, Trash2, CheckCircle, AlertCircle, Bell } from 'lucide-react';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
@@ -101,7 +101,27 @@ export default function MedicineReminder() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden pt-20 pb-12 px-4">
       <div className="absolute top-0 right-1/3 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-blob"></div>
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }}></div>
-      <div className="max-w-6xl mx-auto">
+
+      {/* Subtle Background Decorations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+        <div className="absolute top-[24%] left-[5%] opacity-[0.14] text-blue-400">
+          <Pill className="w-24 h-24 filter blur-[0.5px] rotate-45" />
+        </div>
+        <div className="absolute bottom-[22%] right-[5%] opacity-[0.15] text-cyan-400">
+          <Clock className="w-32 h-32 filter blur-[0.5px]" />
+        </div>
+        <div className="absolute top-[56%] left-[7%] opacity-[0.12] text-blue-300">
+          <Calendar className="w-20 h-20" />
+        </div>
+        <div className="absolute top-[18%] right-[10%] opacity-[0.13] text-cyan-300">
+          <Bell className="w-24 h-24" />
+        </div>
+        <div className="absolute bottom-[40%] left-[3%] opacity-[0.11] text-blue-500">
+          <Pill className="w-16 h-16 -rotate-12" />
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full mb-4 animate-float">
             <Pill className="w-10 h-10 text-white" />

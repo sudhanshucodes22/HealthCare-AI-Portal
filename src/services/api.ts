@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+
+if (!import.meta.env.VITE_API_URL && import.meta.env.PROD) {
+    console.warn('VITE_API_URL is not set in production. Falling back to localhost:3000');
+}
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || '/api',
+    baseURL,
     headers: {
         'Content-Type': 'application/json',
     },
